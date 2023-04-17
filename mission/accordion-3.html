@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover" />
+    <title>테스트</title>
+    <link href="../../js_static/css/front.min.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="page">
+      <div class="page-body">
+        <div class="section">
+          <h1 class="gd__h1">아코디언</h1>
+          <h2 class="gd__h2">토글 없이</h2>
+          <div id="list"></div>
+          <br />
+          <br />
+          <h2 class="gd__h2">토글 되게</h2>
+          <ul class="folding-list ui-folding pub-toggle">
+            <li>
+              <div class="folding-head">
+                <a href="#" class="folding-btn">제목제목 제목제목 제목제목 제목제목</a>
+              </div>
+              <div class="folding-panel">
+                내용<br />
+                내용<br />
+                내용<br />
+                내용<br />
+                내용<br />
+              </div>
+            </li>
+            <li>
+              <div class="folding-head">
+                <a href="#" class="folding-btn">제목제목 제목제목 제목제목 제목제목</a>
+              </div>
+              <div class="folding-panel">
+                내용<br />
+                내용<br />
+                내용<br />
+                내용<br />
+                내용<br />
+                내용<br />
+                내용<br />
+                내용<br />
+                내용<br />
+                내용<br />
+              </div>
+            </li>
+            <li>
+              <div class="folding-head">
+                <a href="#" class="folding-btn">제목제목 제목제목 제목제목 제목제목</a>
+              </div>
+              <div class="folding-panel">
+                내용<br />
+                내용<br />
+                내용<br />
+                내용<br />
+                내용<br />
+                내용<br />
+                내용<br />
+                내용<br />
+                내용<br />
+                내용<br />
+                내용<br />
+                내용<br />
+                내용<br />
+                내용<br />
+                내용<br />
+              </div>
+            </li>
+          </ul>
+          <br />
+          <br />
+          <p>아코디언에서 '.folding-btn' 클릭하여 숨겨진 컨텐츠(.folding-panel)를 보여주세요</p>
+          <p>.folding-btn에 open 클래스로 꺽새 방향이 바뀝니다.</p>
+          <p>한번에 연속으로 다중 클릭 시를 고려해서 만들어주세요</p>
+          <p>상당 리스트는 해당리스트안에 숨김 컨텐츠들 상관없이 클릭하면 클릭한 영역의 숨김 컨텐츠를 제어하고, 하단 리스트는 클릭한 영역의 숨김 컨텐츠는 보여줄때는 보여지는 다른 숨김컨텐츠가 있다면 숨겨주세요</p>
+          <p><u>위내용을 하나의 함수로 리스트 모두를 컨트롤 하세요. 추가 클래스나 다른 속성을 보여해도 무관합니다.</u></p>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="../../js_static/js/jquery-3.6.0.min.js"></script>
+    <script>
+      // 스크립트 작성이 여기에
+      // 제이쿼리로 작성가능, 자바스크립트로 작성하면 더 짱짱
+      function accordion() {
+        // $('.ui-folding .folding-btn').click(function (e) {
+        // 중요
+        $(document).on('click', '.ui-folding .folding-btn', function (e) {
+          e.preventDefault();
+          const _this = $(this);
+          const _panel = _this.closest('.folding-head').siblings('.folding-panel');
+          const _sibling = _this.closest('li').siblings();
+          const _siblingBtn = _sibling.find('.folding-btn');
+          const _siblingPanel = _sibling.find('.folding-panel');
+
+          _this.toggleClass('open');
+          if (_this.hasClass('open')) {
+            _panel.stop().slideDown();
+            if (_this.closest('.ui-folding').hasClass('pub-toggle')) {
+              _siblingBtn.removeClass('open');
+              _siblingPanel.stop().slideUp();
+            }
+          } else {
+            _panel.stop().slideUp();
+          }
+        });
+      }
+
+      function appendlist() {
+        const li = `<ul class="folding-list ui-folding"><li>
+          <div class="folding-head">
+            <a href="#" class="folding-btn">제목제목 제목제목 제목제목 제목제목</a>
+          </div>
+          <div class="folding-panel">
+            내용<br />
+            내용<br />
+            내용<br />
+            내용<br />
+            내용<br />
+          </div>
+        </li>
+        <li>
+          <div class="folding-head">
+            <a href="#" class="folding-btn">제목제목 제목제목 제목제목 제목제목</a>
+          </div>
+          <div class="folding-panel">
+            내용<br />
+            내용<br />
+            내용<br />
+            내용<br />
+            내용<br />
+            내용<br />
+            내용<br />
+            내용<br />
+            내용<br />
+            내용<br />
+          </div>
+        </li>
+        <li>
+          <div class="folding-head">
+            <a href="#" class="folding-btn">제목제목 제목제목 제목제목 제목제목</a>
+          </div>
+          <div class="folding-panel">
+            내용<br />
+            내용<br />
+            내용<br />
+            내용<br />
+            내용<br />
+            내용<br />
+            내용<br />
+            내용<br />
+            내용<br />
+            내용<br />
+            내용<br />
+            내용<br />
+            내용<br />
+            내용<br />
+            내용<br />
+          </div>
+        </li></ul>`;
+        $('#list').append(li);
+      }
+      accordion();
+
+      appendlist();
+    </script>
+  </body>
+</html>

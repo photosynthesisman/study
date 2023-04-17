@@ -1,0 +1,311 @@
+@use 'sass:math'; //sass에서 나누기 및 기타 연산을 하기 위해 사용
+$padding: 2rem;
+$primary-color: #00caca;
+$button-colors: (
+  'success': #28a745,
+  'info': #17a2b8,
+  'warning': #ffc107
+);
+:root {
+  //css로 변수를 잡는 것을 선호
+  --switch-width: 3.5rem;
+  --switch-height: 2rem;
+  --switch-padding: 0.3rem;
+  --main-color: #{$primary-color};
+  --main-color-rgb: #{hex-to-rgb($primary-color)};
+  --base-padding: #{$padding};
+  --outer-padding: -#{$padding};
+}
+body {
+  font-size: 1.6rem;
+}
+html {
+  font-size: 62.5%;
+}
+.wrap {
+  padding: 8rem;
+}
+.img-item {
+  width: 200px;
+}
+.img-box {
+  position: relative;
+  // width: 200px;
+  &:before {
+    content: '';
+    display: block;
+    padding-top: math.div(133, 200) * 100%;
+    background: #ddd;
+  }
+  img {
+    position: absolute;
+    left: 0;
+    width: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* tip */
+  }
+}
+
+.button {
+  // &:not(:first-child) {
+  //   font-size: 11rem;
+  // }
+  background: none;
+  border: 0 none;
+  display: inline-block;
+  text-align: center;
+  color: #111;
+  padding: 1rem 2rem;
+  font-size: 1.6rem;
+  &.primary {
+    background-color: var(--main-color);
+    color: #fff;
+
+    &:active {
+      background-color: rgba(var(--main-color-rgb), 0.5);
+      // background-color: red;;
+    }
+    // &:focus {
+    //   background-color: darken($primary-color, 10%);
+    // }
+  }
+  // &.warning {
+  //   background-color: map.get($button-colors, 'warning');
+  // }
+  @each $color-name, $color-value in $button-colors {
+    &.#{$color-name} {
+      background-color: $color-value;
+      @if ($color-name != 'warning') {
+        // == @if (not($color-name == 'warning')) {
+        // 스크립트의 ||,&& == SCSS의 and, or
+        // @if ($color-name != 'warning') {
+        color: #fff;
+      }
+      &:active {
+        background-color: rgba($color-value, 0.8);
+      }
+    }
+  }
+}
+.btn-wrap {
+  --main-color: red;
+  --main-color-rgb: #{hex-to-rgb(red)};
+}
+.list {
+  padding: 1rem 0;
+  background: red;
+  @include outer(true);
+  li {
+    float: left;
+    padding: 1rem;
+    list-style: none;
+    background-color: #fff;
+    border: 1px solid #000;
+    font-weight: 500;
+    border-radius: 0.5rem;
+  }
+  &:after {
+    @include clear; //@mixin 에서 만들어 놓은 스타일을 적용
+  }
+}
+.tit-h {
+  &1 {
+    font-size: 2.4rem;
+  }
+  &2 {
+    font-size: 2rem;
+  }
+  &3 {
+    font-size: 1.8rem;
+  }
+  &4 {
+    font-size: 1.6rem;
+  }
+}
+.item-box {
+  .item {
+    border: 1px solid #000;
+  }
+}
+
+%btn {
+  background: none;
+  border: 0 none;
+  display: inline-block;
+  text-align: center;
+  color: #fff;
+  padding: 1rem 2rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  &:active {
+    opacity: 0.8;
+  }
+}
+.btn-primary {
+  @extend %btn;
+  background-color: var(--main-color);
+}
+.btn-secondary {
+  @extend %btn;
+  background-color: #111;
+}
+:is(ul, ol) {
+  //:is 와 :where 의 차이는 명시도 차이 is:100
+  + :is(ul, ol) {
+    margin-top: 3rem;
+  }
+}
+
+.ellipsis {
+  @include ellipsis; // ==ellipsis(0)
+}
+.ellipsis-1 {
+  @include ellipsis(1);
+}
+.ellipsis-2 {
+  @include ellipsis(2);
+}
+.ellipsis-3 {
+  @include ellipsis(3);
+}
+
+$btn3-states: (
+  'primary': (
+    'default': (
+      text: #ffffff,
+      background: #007bff,
+      border: #007bff
+    ),
+    'hover': (
+      text: #ff0000,
+      background: #007bff,
+      border: #0062cc
+    ),
+    'active': (
+      text: #ffff00,
+      background: #0062cc,
+      border: #000
+    )
+  ),
+  'secondary': (
+    'default': (
+      text: #111,
+      background: #ddd,
+      border: #999
+    ),
+    'hover': (
+      text: #ff0000,
+      background: #bbb,
+      border: #666
+    ),
+    'active': (
+      text: #ffff00,
+      background: #999,
+      border: #000
+    )
+  ),
+  'taran': (
+    'default': (
+      text: #eee,
+      background: #669977,
+      border: #eee
+    ),
+    'hover': (
+      text: black,
+      background: white,
+      border: rgba(200, 150, 0, 0.5)
+    ),
+    'active': (
+      text: black,
+      background: #ffff00,
+      border: black
+    )
+  )
+);
+
+.btn3 {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  border: 1px solid transparent;
+  text-decoration: none;
+  @each $type, $option in $btn3-states {
+    &.#{$type} {
+      @each $state, $properties in $option {
+        $text-color: map-get($properties, 'text'); //map-get ??
+        $background-color: map-get($properties, 'background');
+        $border-color: map-get($properties, 'border');
+        @if ($state == 'default') {
+          color: $text-color;
+          background-color: $background-color;
+          border-color: $border-color;
+        } @else {
+          &:#{$state} {
+            color: $text-color;
+            background-color: $background-color;
+            border-color: $border-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+@for $i from 0 through 40 {
+  .fz-#{$i} {
+    font-size: $i * 0.1rem !important;
+  }
+} // 클래스에 따라 폰트 정하는 for 문
+@for $i from 1 through 9 {
+  .fw-#{$i}00 {
+    font-weight: $i * 100 !important;
+  }
+}
+@for $i from 0 through 200 {
+  .w-#{$i * 5} {
+    width: $i * 0.5rem !important;
+  }
+} // 5 단위로 너비 조정
+
+$number-of-boxes: 10;
+$opacity-step: math.div(1, $number-of-boxes);
+$box-width: 100px;
+$box-height: 100px;
+.fade-box {
+  width: $box-width;
+  height: $box-height;
+  display: inline-block;
+  background-color: #007bff;
+  margin-right: 10px;
+}
+$i: 1;
+@while $i <= $number-of-boxes {
+  .fade-#{$i} {
+    opacity: $i * $opacity-step;
+  }
+  $i: $i + 1;
+}
+
+$min-font-size: 14px;
+$max-font-size: 24px;
+$min-width: 300px;
+$max-width: 1200px;
+$step: 100;
+$j: $min-width;
+@while $j <= $max-width {
+  @media (min-width: $j) {
+    $ratio: math.div(($j - $min-width), ($max-width - $min-width));
+    $font-size: $min-font-size + $ratio * ($max-font-size - $min-font-size);
+    .font-box {
+      font-size: $font-size;
+    }
+  }
+  $j: $j + $step;
+} // 반응형 폰트 사이즈 변경
+
+@include define-emoji('women-holding-hands', '👭');

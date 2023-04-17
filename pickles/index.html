@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width= , initial-scale=1.0" />
+    <link href="./css/style.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
+    <script type="text/javascript" src="./js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <title>메인 페이지 및 GNB 연습</title>
+  </head>
+  <body>
+    <div id="wrap">
+      <div class="gnb">
+        <div class="close-button"></div>
+        <h2 class="user"><em class="name">이아름</em>님</h2>
+        <hr />
+        <div class="summary">
+          <div class="wrap">
+            <div>
+              <p>예약내역</p>
+            </div>
+            <div>
+              <p>예약현황</p>
+            </div>
+            <div>
+              <p>관심내역</p>
+            </div>
+          </div>
+          <div class="has-point">
+            <p>보유 포인트</p>
+            <span>0</span>
+          </div>
+        </div>
+        <div class="boundary"></div>
+        <div class="list-wrap">
+          <div class="info detail">
+            <p>내 정보</p>
+            <ul>
+              <li><a href="#none" title="구매 내역 페이지로 이동">구매 내역</a></li>
+              <li><a href="#none" title="나의 리뷰 페이지로 이동">나의 리뷰</a></li>
+              <li><a href="#none" title="내 정보 수정 페이지로 이동">내 정보 수정</a></li>
+              <li><a href="#none" title="로그아웃">로그아웃</a></li>
+            </ul>
+          </div>
+
+          <div class="active detail">
+            <p class="new">코치 활동</p>
+            <ul>
+              <li><a href="#none" title="코치 인증 페이지로 이동">코치 인증</a></li>
+              <li><a href="#none" title="코치 이력서 페이지로 이동">코치 이력서</a></li>
+              <li><a href="#none" title="코치 상품 페이지로 이동">코치 상품</a></li>
+              <li><a href="#none" title="판매 내역 페이지로 이동">판매 내역</a></li>
+            </ul>
+          </div>
+
+          <div class="cs detail">
+            <p>고객센터</p>
+            <ul>
+              <li><a href="#none" title="카카오톡으로 문의하기 페이지로 이동">카카오톡으로 문의하기</a></li>
+              <li><a href="#none" title="내 지역에 공간 요청하기 페이지로 이동">내 지역에 공간 요청하기</a></li>
+              <li><a href="#none" title="피클스와 제휴 맺기 페이지로 이동">피클스와 제휴 맺기</a></li>
+              <li><a href="#none" title="서비스 소개 페이지로 이동">서비스 소개</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="gnb_bg"></div>
+      <header id="header">
+        <h1 id="logo">로고</h1>
+        <div class="gnb_box">
+          <a href="#none" class="search"></a>
+          <a href="#none" class="gnb-button"></a>
+        </div>
+      </header>
+
+      <main>
+        <div class="main-banner main-banner1">
+          <div class="slidecontainer">
+            <div class="slide first">
+              <p class="tt">이제 “트레이닝”도 직거래 하세요</p>
+              <p class="sub-tt">수수료내지 마시고<br />수업 비용만 결제하세요</p>
+            </div>
+
+            <div class="slide second">
+              <p class="tt">PICKLES NEW UPDATE !</p>
+              <p class="sub-tt">결제 링크 생성 기능을 통해<br /><em>카드 결제 고객도 놓치지 마세요!</em></p>
+            </div>
+            <div class="slide third">
+              <p class="tt">헬스장&middot;필라테스샵&middot;GX룸&middot;요가원</p>
+              <p class="sub-tt">공간으로 추가 수익을 창출하실<br /><em>호스트를 신규 모집합니다.</em></p>
+            </div>
+          </div>
+        </div>
+        <!-- 
+        <div class="main-banner main-banner2">
+          <div class="slidecontainer">
+            <div class="slide first">
+              <p class="tt">이제 “트레이닝”도 직거래 하세요</p>
+              <p class="sub-tt">수수료내지 마시고<br />수업 비용만 결제하세요</p>
+            </div>
+
+            <div class="slide second">
+              <p class="tt">PICKLES NEW UPDATE !</p>
+              <p class="sub-tt">결제 링크 생성 기능을 통해<br /><em>카드 결제 고객도 놓치지 마세요!</em></p>
+            </div>
+            <div class="slide third">
+              <p class="tt">헬스장&middot;필라테스샵&middot;GX룸&middot;요가원</p>
+              <p class="sub-tt">공간으로 추가 수익을 창출하실<br /><em>호스트를 신규 모집합니다.</em></p>
+            </div>
+          </div>
+        </div>
+         -->
+        <section>
+          <h2 class="sec-tt">피클스가 추천하는 공간 🏆</h2>
+          <div class="card-box">
+            <div class="card one">
+              <div class="card-wrap">
+                <img class="card-image" src="./image/image 1.png" alt="추천공간1" />
+                <div class="right">바로승인</div>
+                <div class="enable">강습가능</div>
+                <div class="like"></div>
+              </div>
+              <div class="card-explain">
+                <div class="third-floor">
+                  <div class="like-count">13</div>
+                  <div class="address">서울특별시 강남구</div>
+                </div>
+                <div class="second-floor">
+                  <h3>본케어 필라테스</h3>
+                  <span class="new">New!</span>
+                </div>
+                <div class="first-floor">
+                  <p>
+                    <em class="count">1</em>회 <span class="cost"><em class="cash">15,000</em>원 ~</span>
+                  </p>
+                  <div class="star-wrap">
+                    <span class="star yellow"></span>
+                    <span class="star yellow"></span>
+                    <span class="star yellow"></span>
+                    <span class="star yellow"></span>
+                    <span class="star grey"></span>
+                    <span class="counting-star">(<em class="count">0</em>)</span>
+                  </div>
+                </div>
+              </div>
+              <a href="#none" title="해당링크로 이동"></a>
+            </div>
+            <div class="card two">
+              <div class="card-wrap">
+                <img class="card-image" src="./image/image 2.png" alt="추천공간2" />
+                <div class="right">바로승인</div>
+                <div class="enable">강습가능</div>
+                <div class="like"></div>
+              </div>
+              <div class="card-explain">
+                <div class="third-floor">
+                  <div class="like-count">13</div>
+                  <div class="address">서울특별시 강남구</div>
+                </div>
+                <div class="second-floor">
+                  <h3>본케어 필라테스</h3>
+                  <span class="new">New!</span>
+                </div>
+                <div class="first-floor">
+                  <p><em class="count">1</em>회 <span class="cost">15,000</span>원 ~</p>
+                  <div class="star-wrap">
+                    <span class="star yellow"></span>
+                    <span class="star yellow"></span>
+                    <span class="star yellow"></span>
+                    <span class="star yellow"></span>
+                    <span class="star grey"></span>
+                    <span class="counting-star">(<em class="count">0</em>)</span>
+                  </div>
+                </div>
+              </div>
+              <a href="#none" title="해당링크로 이동"></a>
+            </div>
+          </div>
+        </section>
+        <section>
+          <h2 class="sec-tt">원하는 선생님과 트레이닝 💪</h2>
+          <div class="card-box teacher">
+            <div class="card">
+              <div class="card-image">
+                <img src="./image/image 4.png" class="teacher_img" alt="트레이너 슈가보이" />
+              </div>
+              <div class="card-explain">
+                <p>트레이너 슈가보이</p>
+                <div class="first-floor">
+                  <div class="like-count">13</div>
+                  <div class="address">강남구, 마포구, 영등포구</div>
+                </div>
+              </div>
+              <a href="#none" title="해당 상세 페이지로 이동"></a>
+            </div>
+            <div class="card">
+              <div class="card-image">
+                <img src="./image/image 5.png" class="teacher_img" alt="트레이너 슈가보이" />
+              </div>
+              <div class="card-explain">
+                <p>트레이너 슈가보이</p>
+                <div class="first-floor">
+                  <div class="like-count">13</div>
+                  <div class="address">강남구, 마포구, 영등포구</div>
+                </div>
+              </div>
+              <a href="#none" title="해당 상세 페이지로 이동"></a>
+            </div>
+            <div class="card">
+              <div class="card-image">
+                <img src="./image/image 6.png" class="teacher_img" alt="트레이너 슈가보이" />
+              </div>
+              <div class="card-explain">
+                <p>트레이너 슈가보이</p>
+                <div class="first-floor">
+                  <div class="like-count">13</div>
+                  <div class="address">강남구, 마포구, 영등포구</div>
+                </div>
+              </div>
+              <a href="#none" title="해당 상세 페이지로 이동"></a>
+            </div>
+          </div>
+          <button class="more">모든 선생님 보기</button>
+        </section>
+        <section class="has-bg">
+          <h2 class="sec-tt">이번 달 진행 중인 피클스 이벤트 🎁</h2>
+
+          <div class="slider-wrap">
+            <div class="cont">
+              <img src="./image/event1.png" alt="" />
+            </div>
+            <div class="cont">
+              <img src="./image/event2.png" alt="" />
+            </div>
+            <div class="cont">
+              <img src="./image/event3.png" alt="" />
+            </div>
+          </div>
+          <button class="more">모든 이벤트 보기</button>
+        </section>
+        <section>
+          <h2 class="sec-tt">
+            새로 들어왔어요!
+            <span class="new">NEW</span>
+          </h2>
+          <div class="card-box">
+            <div class="card one">
+              <div class="card-wrap">
+                <img class="card-image" src="./image/image 1.png" alt="추천공간1" />
+                <div class="right">바로승인</div>
+                <div class="enable">강습가능</div>
+                <div class="like"></div>
+              </div>
+              <div class="card-explain">
+                <div class="third-floor">
+                  <div class="like-count">13</div>
+                  <div class="address">서울특별시 강남구</div>
+                </div>
+                <div class="second-floor">
+                  <h3>본케어 필라테스</h3>
+                  <span class="new">New!</span>
+                </div>
+                <div class="first-floor">
+                  <p>
+                    <em class="count">1</em>회 <span class="cost"><em class="cash">15,000</em>원 ~</span>
+                  </p>
+                  <div class="star-wrap">
+                    <span class="star yellow"></span>
+                    <span class="star yellow"></span>
+                    <span class="star yellow"></span>
+                    <span class="star yellow"></span>
+                    <span class="star grey"></span>
+                    <span class="counting-star">(<em class="count">0</em>)</span>
+                  </div>
+                </div>
+              </div>
+              <a href="#none" title="해당링크로 이동"></a>
+            </div>
+            <div class="card two">
+              <div class="card-wrap">
+                <img class="card-image" src="./image/image 2.png" alt="추천공간2" />
+                <div class="right">바로승인</div>
+                <div class="enable">강습가능</div>
+                <div class="like"></div>
+              </div>
+              <div class="card-explain">
+                <div class="third-floor">
+                  <div class="like-count">13</div>
+                  <div class="address">서울특별시 강남구</div>
+                </div>
+                <div class="second-floor">
+                  <h3>본케어 필라테스</h3>
+                  <span class="new">New!</span>
+                </div>
+                <div class="first-floor">
+                  <p><em class="count">1</em>회 <span class="cost">15,000</span>원 ~</p>
+                  <div class="star-wrap">
+                    <span class="star yellow"></span>
+                    <span class="star yellow"></span>
+                    <span class="star yellow"></span>
+                    <span class="star yellow"></span>
+                    <span class="star grey"></span>
+                    <span class="counting-star">(<em class="count">0</em>)</span>
+                  </div>
+                </div>
+              </div>
+              <a href="#none" title="해당링크로 이동"></a>
+            </div>
+          </div>
+        </section>
+        <section class="download-banner">
+          <div class="banner">
+            <div class="link-wrap">
+              <a href="#none" class="button apple"></a>
+              <a href="#none" class="button google"></a>
+            </div>
+          </div>
+          <div class="link-wrap">
+            <div class="join">
+              <div class="txt-wrap">
+                <h4>피클스 파트너 가입하기</h4>
+                <p>내 피트니스 공간을 피클스에 올리고 싶다면?</p>
+              </div>
+              <a href="#none" title="상세페이지로 이동"></a>
+            </div>
+            <div class="request">
+              <div class="txt-wrap">
+                <h4>지역요청하기</h4>
+                <p>우리 지역에도 이 공간이 있으면 좋겠어요!</p>
+              </div>
+              <a href="#none" title="상세페이지로 이동"></a>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <a href="#none" class="footer-logo" title="홈페이지로 이동">
+          <div class="logo"></div>
+          <div class="logo-text"></div>
+        </a>
+        <div class="link-box">
+          <a href="#none" class="company" title="(주)착한사람들컴퍼니">(주)착한사람들컴퍼니</a>
+          <a href="#none" class="terms" title="(주)착한사람들컴퍼니">이용약관</a>
+          <a href="#none" class="policy" title="(주)착한사람들컴퍼니">개인정보처리방침</a>
+        </div>
+        <div class="company-explain">
+          <div class="quard flex">
+            <p>상호명 (주)착한사람들컴퍼니</p>
+            <p>대표 권오중</p>
+          </div>
+          <div class="third">
+            <address>서울특별시 마포구 백범로31길 21, 본관 812호</address>
+          </div>
+          <div class="second flex">
+            <p>사업자등록번호 292-86-01882</p>
+            <p>연락처 <tell>010-2063-6402</tell></p>
+          </div>
+          <div class="first flex">
+            <p>예금주 (주)착한사람들컴퍼니</p>
+            <p>계좌번호 기업은행 047-117166-01-033</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+  <script>
+    function jsSlide(target, _duration, _interval) {
+      if (!$(target).length) return; // 여기서 return 은 스크립트 오류 방지
+      const sildeWrapper = $(target);
+      const slideContainer = sildeWrapper.find('.slidecontainer');
+      const slides = slideContainer.find('.slide');
+      const slideCount = slides.length;
+      const duration = !!_duration ? _duration : 500;
+      const intervalTimer = !!_interval ? _interval : 4500;
+      let currentIdx = 0;
+      let timer;
+
+      slideContainer.prepend(slides.clone().addClass('clone'));
+      slideContainer.append(slides.eq(0).clone().addClass('clone'));
+      slideContainer.find('.slide').each(function (idx) {
+        $(this).css({ left: idx * 100 + '%' });
+      });
+      slideContainer.css({ transform: 'translateX(' + slideCount * -100 + '%)' });
+      function moveSlide(num) {
+        slideContainer.stop().animate({ left: -100 * num + '%' }, duration, function () {
+          currentIdx = num;
+          if (currentIdx == slideCount || currentIdx == -slideCount) {
+            slideContainer.css({ left: '0%' });
+            currentIdx = 0;
+          }
+        });
+      }
+      sildeWrapper
+        .mouseover(function () {
+          clearInterval(timer);
+        })
+        .mouseout(function () {
+          autoSlide();
+        });
+      autoSlide();
+
+      function autoSlide() {
+        timer = setInterval(function () {
+          moveSlide(currentIdx + 1);
+        }, intervalTimer);
+      }
+    }
+    jsSlide('.main-banner1');
+    jsSlide('.main-banner2', 300, 3000);
+
+    $('.slider-wrap').slick({
+      slide: 'div',
+      arrows: false,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      centerMode: true,
+      centerPadding: '60px'
+    });
+
+    $('.gnb-button').click(function () {
+      $('body').addClass('gnb-open');
+    });
+    $('.close-button').click(function () {
+      $('body').removeClass('gnb-open');
+    });
+    $('.gnb_bg').click(function () {
+      $('body').removeClass('gnb-open');
+    });
+
+    window.addEventListener('scroll', function () {
+      const currentScroll = window.scrollY;
+      console.log(currentScroll);
+      if (currentScroll > 0) {
+        $('body').addClass('pos-fix');
+      } else {
+        $('body').removeClass('pos-fix');
+      }
+    });
+  </script>
+</html>

@@ -1,0 +1,203 @@
+body {
+  overflow-x: hidden;
+  .gnb {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -100%;
+    z-index: 100;
+    width: 27rem;
+    background: #fff;
+    transition: right 300ms ease-in 300ms;
+    .close-button {
+      position: absolute;
+      right: 100%;
+      width: 5rem;
+      height: 5rem;
+      background: #212422;
+      cursor: pointer;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 1.7rem;
+        right: 1.7rem;
+        width: 1.6rem;
+        height: 1.6rem;
+        background-image: url("data:image/svg+xml,%0A%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14 14L2 2' stroke='white' stroke-width='1.5' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M2 14L14 2' stroke='white' stroke-width='1.5' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+      }
+    }
+    hr {
+      height: 0.1rem;
+      margin: 1.6rem 0 2rem 0;
+      background: #edf1ee;
+      border: none;
+    }
+    h2.user {
+      padding: 4rem 0 0 2rem;
+      font-size: 2.4rem;
+      font-weight: 700;
+      line-height: 3.6rem;
+      color: #212422;
+    }
+    .summary {
+      padding: 0 2.1rem 2rem 2.2rem;
+      font-size: 1.3rem;
+      line-height: 1.9rem;
+      letter-spacing: -0.03rem;
+      color: #212422;
+      .wrap {
+        display: flex;
+        justify-content: space-between;
+        > div {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          &:nth-child(2) {
+            margin: 0 2.1rem;
+            padding: 0 2.1rem;
+            border: 0.1rem solid #edf1ee;
+            border-top-color: transparent;
+            border-bottom-color: transparent;
+          }
+          &::before {
+            content: '';
+            width: 1.6rem;
+            height: 1.6rem;
+            margin-bottom: 0.6rem;
+            background-position: center center;
+            background-size: 100%;
+            background-repeat: no-repeat;
+          }
+          &:first-child::before {
+            background-image: url(../image/icn_complete.png);
+          }
+          &:nth-child(2)::before {
+            background-image: url(../image/icn_calendar.png);
+          }
+          &:nth-child(3)::before {
+            background-image: url("data:image/svg+xml,%0A%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 14.845L6.985 13.921C3.38 10.652 1 8.496 1 5.85C1 3.694 2.694 2 4.85 2C6.068 2 7.237 2.567 8 3.463C8.763 2.567 9.932 2 11.15 2C13.306 2 15 3.694 15 5.85C15 8.496 12.62 10.652 9.015 13.928L8 14.845Z' fill='%2349AA85'/%3E%3C/svg%3E%0A");
+          }
+        }
+      }
+      .has-point {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 2rem;
+        padding: 1rem 1.6rem 1.1rem;
+        background: #f2f7f4;
+        border-radius: 0.2rem;
+        span {
+          font-weight: 700;
+        }
+      }
+    }
+    .boundary {
+      height: 0.8rem;
+      margin-bottom: 2.4rem;
+      border: 0.1rem solid #edf1ee;
+      border-right-color: transparent;
+      border-left-color: transparent;
+      background: #fafafa;
+    }
+    .detail {
+      padding-left: 2.4rem;
+      &.info {
+        li:first-child a::before {
+          background-image: url(../image/icn_buy.png);
+        }
+        li:nth-child(2) a::before {
+          background-image: url(../image/Group\ 787.png);
+        }
+        li:nth-child(3) a::before {
+          background-image: url(../image/icn_mypage.png);
+        }
+        li:nth-child(4) a::before {
+          background-image: url(../image/icn_logout.png);
+        }
+      }
+      &.active {
+        li:first-child a::before {
+          background-image: url(../image/Group\ 836.png);
+        }
+        li:nth-child(2) a::before {
+          background-image: url(../image/icn_add_trainer.png);
+        }
+        li:nth-child(3) a::before {
+          background-image: url(../image/Group\ 603.png);
+        }
+        li:nth-child(4) a::before {
+          background-image: url(../image/Group\ 686.png);
+        }
+      }
+      &.cs {
+        li:first-child a::before {
+          background-image: url(../image/icn_kakao.png);
+        }
+        li:nth-child(2) a::before {
+          background-image: url(../image/Group\ 541.png);
+        }
+        li:nth-child(3) a::before {
+          background-image: url(../image/icn_partnership.png);
+        }
+        li:nth-child(4) a::before {
+          background-image: url(../image/icn_login.png);
+        }
+      }
+      &:not(:first-child) {
+        margin-top: 3.2rem;
+      }
+      > p {
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+        font-weight: 300;
+        line-height: 1.8rem;
+        color: #9ea3a0;
+        &.new:after {
+          content: 'NEW';
+          margin-left: 0.3rem;
+          padding: 0.2rem 0.4rem;
+          background: #ff3d71;
+          border-radius: 0.2rem;
+          font-size: 1.1rem;
+          font-weight: 900;
+          line-height: 1.3rem;
+          letter-spacing: -0.03rem;
+          color: #fff;
+        }
+      }
+      ul {
+        li {
+          display: flex;
+
+          margin-bottom: 1.6rem;
+          a {
+            position: relative;
+            padding-left: 2.8rem;
+            font-size: 1.6rem;
+            font-weight: 400;
+            line-height: 2.4rem;
+            color: #424643;
+            &:before {
+              content: '';
+              position: absolute;
+              top: 50%;
+              left: 0;
+              transform: translateY(-50%);
+              width: 1.6rem;
+              height: 1.6rem;
+              margin-right: 1.2rem;
+              background-position: center center;
+              background-size: 100%;
+              background-repeat: no-repeat;
+            }
+          }
+        }
+      }
+    }
+  }
+  &.gnb-open {
+    .gnb {
+      right: 0;
+    }
+  }
+}

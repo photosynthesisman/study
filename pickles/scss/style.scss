@@ -1,0 +1,12 @@
+@charset "utf-8";
+
+// import
+@import url(../css/common.css);
+@import 'gnb';
+@import 'main';
+
+html {
+  font-size: 62.5%;
+  height: 100%;
+  text-size-adjust: none;
+}
